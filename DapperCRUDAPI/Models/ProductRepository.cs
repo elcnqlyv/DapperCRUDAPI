@@ -9,7 +9,7 @@ namespace DapperCRUDAPI.Models
         private string connectionString;
         public ProductRepository()
         {
-            connectionString = @"Persist Security Info=False; User ID=sa; password = 123; Initial Catalog=DAPPERDB;Data Source = DESKTOP-DRJMU61\\SQLEXPRESS; Connection Timeout=100000;";
+            connectionString = @"Persist Security Info=False; User ID=sa; password = 123; Initial Catalog=DAPPERDB;Data Source = LAPTOP\SQLEXPRESS; Connection Timeout=100000;";
         }
 
         public IDbConnection Connection

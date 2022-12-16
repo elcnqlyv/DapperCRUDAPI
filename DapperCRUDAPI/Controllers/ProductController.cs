@@ -18,10 +18,32 @@ namespace DapperCRUDAPI.Controllers
         return productRepository.GetAll();
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public Product Get(int id)
         {
             return productRepository.GetById(id);
+        }
+
+        [HttpPost]
+        public void Post([FromBody] Product prod) {
+        
+            if(ModelState.IsValid)
+                productRepository.Add(prod);
+        }
+
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] Product prod)
+        {
+            prod.ProductId = id;
+            if (ModelState.IsValid)
+                productRepository.Update(prod);
+
+        }
+        [HttpDelete]
+
+        public void Delete(int id)
+        {
+            productRepository.Delete(id);
         }
     }
 }
